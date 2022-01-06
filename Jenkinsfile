@@ -1,12 +1,12 @@
 pipeline {
     agent any
    
-    tools {
-       terraform 'terraform1.1.2'
-    }
+//     tools {
+//        terraform 'terraform1.1.2'
+//     }
 
     parameters {
-        string(name: 'environment', defaultValue: 'terraform', description: 'Workspace/environment file to use for deployment')
+        string(name: 'environment', defaultValue: 'Development', description: 'Workspace/environment file to use for deployment')
         booleanParam(name: 'autoApprove', defaultValue: false, description: 'Automatically run apply after generating plan?')
         booleanParam(name: 'destroy', defaultValue: false, description: 'Destroy Terraform build?')
 
@@ -23,7 +23,7 @@ pipeline {
         stage('checkout') {
             steps {
                  script{
-                        dir("terraform")
+//                         dir("terraform")
                         {
                             git 'https://github.com/anselmenumbisia/aws_terraform_jenkins_project.git'
                         }
