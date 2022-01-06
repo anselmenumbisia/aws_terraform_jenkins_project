@@ -1,9 +1,9 @@
 pipeline {
     agent any
    
-//     tools {
-//        terraform 'terraform1.1.2'
-//     }
+    tools {
+       terraform 'terraform1.1.2'
+    }
 
     parameters {
         string(name: 'environment', defaultValue: 'Development', description: 'Workspace/environment file to use for deployment')
